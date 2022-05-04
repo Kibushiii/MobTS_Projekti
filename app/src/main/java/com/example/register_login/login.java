@@ -38,8 +38,8 @@ public class login extends AppCompatActivity {
                     Boolean checkuserpass = DB.checkusernamepassword(user, pass);
                     if (checkuserpass == true){
                         Toast.makeText(login.this, "Sign in successful", Toast.LENGTH_SHORT).show();
-                        Intent intent  = new Intent(getApplicationContext(), frontpage.class);
-                        startActivity(intent);
+//                        Intent intent  = new Intent(getApplicationContext(), Frontpage.class);
+//                        startActivity(intent);
                     } else {
                         Toast.makeText(login.this, "Username or password is incorrect", Toast.LENGTH_SHORT).show();
                     }
