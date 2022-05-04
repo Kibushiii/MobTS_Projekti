@@ -37,11 +37,11 @@ public class login extends AppCompatActivity {
                 else {
                     Boolean checkuserpass = DB.checkusernamepassword(user, pass);
                     if (checkuserpass == true){
-                        Toast.makeText(login.this, "Sign in successfull", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(login.this, "Sign in successful", Toast.LENGTH_SHORT).show();
                         Intent intent  = new Intent(getApplicationContext(), frontpage.class);
                         startActivity(intent);
                     } else {
-                        Toast.makeText(login.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(login.this, "Username or password is incorrect", Toast.LENGTH_SHORT).show();
                     }
                 }
             }

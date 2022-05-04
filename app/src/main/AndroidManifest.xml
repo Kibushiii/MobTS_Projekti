@@ -10,9 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Registerlogin">
         <activity
-            android:parentActivityName=".MainActivity"
-            android:name=".frontpage"
+            android:name=".water_tracker"
             android:exported="false" />
+        <activity
+            android:name=".frontpage"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".login"
             android:exported="false"

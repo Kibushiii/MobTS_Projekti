@@ -54,7 +54,7 @@ public class register extends AppCompatActivity {
                             Toast.makeText(register.this, "User already exists! please sign in", Toast.LENGTH_SHORT).show();
                         }
                     } else {
-                        Toast.makeText(register.this, "Passwords not matching", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(register.this, "Passwords do noy match", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
