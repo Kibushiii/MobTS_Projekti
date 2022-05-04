@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.project">
+    package="com.example.register_login">
 
     <application
         android:allowBackup="true"
@@ -8,7 +8,19 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Project">
+        android:theme="@style/Theme.Registerlogin">
+        <activity
+            android:parentActivityName=".MainActivity"
+            android:name=".frontpage"
+            android:exported="false" />
+        <activity
+            android:name=".login"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".register"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
