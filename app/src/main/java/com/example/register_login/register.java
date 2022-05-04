@@ -43,7 +43,7 @@ public class register extends AppCompatActivity {
                         if (checkuser == false){
                             Boolean insert = DB.insertData(user, pass);
                             if ( insert == true){
-                                Toast.makeText(register.this, "Registered successfully", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(register.this, "Registered successfully!", Toast.LENGTH_SHORT).show();
 //                                Intent intent = new Intent(getApplicationContext(),frontpage.class);
 //                                startActivity(intent);
                             } else {
