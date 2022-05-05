@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -41,6 +42,7 @@ public class Frontpage extends AppCompatActivity {
     private ArrayList arrayList;
 
     private TextView welcome;
+    Button diaryBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +58,14 @@ public class Frontpage extends AppCompatActivity {
 
         welcome = (TextView) findViewById(R.id.welcomeMessage);
         welcome.setText("Hello, " + username);
+
+        diaryBtn = (Button) findViewById(R.id.diaryBtn);
+        diaryBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), diary.class));
+            }
+        });
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override

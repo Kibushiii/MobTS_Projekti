@@ -10,17 +10,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MobTS">
         <activity
-            android:name=".TrackerPage"
-            android:parentActivityName=".Frontpage"
+            android:name=".diary"
             android:exported="false" />
+        <activity
+            android:name=".TrackerPage"
+            android:exported="false"
+            android:parentActivityName=".Frontpage" />
         <activity
             android:name=".Settings"
-            android:parentActivityName=".Frontpage"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".Frontpage" />
         <activity
             android:name=".Profile"
-            android:parentActivityName=".Frontpage"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".Frontpage" />
         <activity
             android:name=".Frontpage"
             android:exported="false" />

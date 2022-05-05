@@ -4,7 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AnroidStudioShit/MobTS/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2985" />
-        <entry key="..\:/AnroidStudioShit/MobTS/app/src/main/res/layout/activity_frontpage.xml" value="0.3625" />
+        <entry key="..\:/AnroidStudioShit/MobTS/app/src/main/res/layout/activity_diary.xml" value="0.3625" />
+        <entry key="..\:/AnroidStudioShit/MobTS/app/src/main/res/layout/activity_frontpage.xml" value="0.33" />
         <entry key="..\:/AnroidStudioShit/MobTS/app/src/main/res/layout/activity_login.xml" value="0.3625" />
         <entry key="..\:/AnroidStudioShit/MobTS/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/AnroidStudioShit/MobTS/app/src/main/res/layout/activity_profile.xml" value="0.3625" />
