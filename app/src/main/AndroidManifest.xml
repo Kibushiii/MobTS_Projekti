@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.register_login">
+    package="com.example.mobts">
 
     <application
         android:allowBackup="true"
@@ -8,18 +8,28 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Registerlogin">
+        android:theme="@style/Theme.MobTS">
         <activity
-            android:name=".water_tracker"
+            android:name=".TrackerPage"
+            android:parentActivityName=".Frontpage"
+            android:exported="false" />
+        <activity
+            android:name=".Settings"
+            android:parentActivityName=".Frontpage"
+            android:exported="false" />
+        <activity
+            android:name=".Profile"
+            android:parentActivityName=".Frontpage"
+            android:exported="false" />
+        <activity
+            android:name=".Frontpage"
             android:exported="false" />
         <activity
             android:name=".login"
-            android:exported="false"
-            android:parentActivityName=".MainActivity" />
+            android:exported="false" />
         <activity
             android:name=".register"
-            android:exported="false"
-            android:parentActivityName=".MainActivity" />
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tvpr"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/walking"
+    tools:context=".TrackerPage"
+    tools:ignore="ExtraText">
+
+    <ProgressBar
+        android:id="@+id/Bar"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="295dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:indeterminate="false"
+        android:max="100"
+        android:secondaryProgress="0"
+        app:layout_constraintBottom_toTopOf="@+id/tvPresent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputnumber" />
+
+    <Button
+        android:id="@+id/addValue"
+        style="@style/Widget.Material3.MaterialCalendar.Year"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:background="@drawable/custtom_button"
+        android:text="+Add Value"
+        android:textAllCaps="false"
+        android:textColor="#7C5050"
+        android:textColorHighlight="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPresent" />
+
+
+    <EditText
+        android:id="@+id/inputnumber"
+        android:layout_width="173dp"
+        android:layout_height="57dp"
+        android:background="@drawable/custtom_button"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Enter Number"
+        android:inputType="number"
+        android:textColor="#7C5050"
+        android:textColorHint="#7C5050"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/guideline6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/watertracker"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="#C52323"
+        android:gravity="center"
+        android:text="@string/_0ml_3000ml"
+        android:textColor="#fff"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/inputnumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tvPresent"
+        android:layout_width="78dp"
+        android:layout_height="44dp"
+        android:text="0%"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline10" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <TextView
+        android:id="@+id/WIP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WORK IN PROGRESS"
+        android:textColor="#000000"
+        android:textSize="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
