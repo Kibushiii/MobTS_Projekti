@@ -63,7 +63,8 @@ public class Frontpage extends AppCompatActivity {
         diaryBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), diary.class));
+                Intent intent = new Intent(getApplicationContext(), diary.class);
+                startActivity(intent);
             }
         });
 

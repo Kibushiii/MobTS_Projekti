@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import io.realm.Realm;
+//import io.realm.Realm;
 
 public class diary extends AppCompatActivity {
 
@@ -21,26 +21,26 @@ public class diary extends AppCompatActivity {
         EditText descriptionInput = findViewById(R.id.descriptioninput);
         Button diarySaveBtn =  (Button) findViewById(R.id.diaryBtn);
 
-        Realm.init(getApplicationContext());
-        Realm realm = Realm.getDefaultInstance();
-
-        diarySaveBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String title = diaryInput.getText().toString();
-                String description = descriptionInput.getText().toString();
-                long timeCreated = System.currentTimeMillis();
-
-                realm.beginTransaction();
-                Note note = realm.createObject(Note.class);
-                note.setTitle(title);
-                note.setDescription(description);
-                note.setTimeCreated(timeCreated);
-                realm.commitTransaction();
-                Toast.makeText(getApplicationContext(), "Diary saved", Toast.LENGTH_SHORT).show();
-                finish();
-
-            }
-        });
+//        Realm.init(getApplicationContext());
+//        Realm realm = Realm.getDefaultInstance();
+//
+//        diarySaveBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                String title = diaryInput.getText().toString();
+//                String description = descriptionInput.getText().toString();
+//                long timeCreated = System.currentTimeMillis();
+//
+//                realm.beginTransaction();
+//                Note note = realm.createObject(Note.class);
+//                note.setTitle(title);
+//                note.setDescription(description);
+//                note.setTimeCreated(timeCreated);
+//                realm.commitTransaction();
+//                Toast.makeText(getApplicationContext(), "Diary saved", Toast.LENGTH_SHORT).show();
+//                finish();
+//
+//            }
+//        });
     }
 }

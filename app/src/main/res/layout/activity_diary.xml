@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/diarytextview"
-        android:text="Add new note"
+        android:text="Add new diary entry"
         android:textSize="25dp"
         android:textStyle="bold"
         android:gravity="center"
@@ -45,9 +45,19 @@
         android:id="@+id/diarysave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="Save"
         android:layout_gravity="center"/>
     </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/diaryWIP"
+        android:text="WIP"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_margin="40dp"/>
 
 
 </LinearLayout>

@@ -1,8 +1,6 @@
 package com.example.mobts;
 
-import io.realm.RealmObject;
-
-public class Note extends RealmObject {
+public class Note {
     private String title;
     private String description;
     private long timeCreated;
