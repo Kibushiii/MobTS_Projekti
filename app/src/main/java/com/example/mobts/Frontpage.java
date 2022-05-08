@@ -64,7 +64,7 @@ public class Frontpage extends AppCompatActivity {
             }
         });
 
-        // Listen for listview item clicks and then open the TrackerPage activity //
+        // Listens for listview item clicks and then open the TrackerPage activity //
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l){
