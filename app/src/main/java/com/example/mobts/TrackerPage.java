@@ -19,9 +19,10 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import java.util.Calendar;
+
 public class TrackerPage extends AppCompatActivity {
 
-    private float BMI;
     private float waterIntake;
     private float calorieIntake;
 
@@ -58,11 +59,8 @@ public class TrackerPage extends AppCompatActivity {
         Tracker tracker = (Tracker) getIntent().getSerializableExtra("Single");
 
 
-        // Calculate BMI //
-
-        BMI = tracker.getWeight() / (int) Math.pow(tracker.getHeight(), 2);
-
         //Select constraintlayout//
+
         tvpr = findViewById(R.id.tvpr);
 
 
@@ -84,37 +82,40 @@ public class TrackerPage extends AppCompatActivity {
 
         SharedPreferences prefGet= getSharedPreferences("DailyPref", Activity.MODE_PRIVATE);
         waterValue = prefGet.getInt("WATER", waterValue);
-        waterPresent = prefGet.getInt("WATERPERCENTAGE", waterPresent);
 
         calorieValue = prefGet.getInt("CALORIES", calorieValue);
-        caloriePresent = prefGet.getInt("CALORIEPERCENTAGE", caloriePresent);
 
         bloodpressureValue = prefGet.getInt("BLOODPRESSURE", bloodpressureValue);
 
-
-
+        //Get the values of when water, calories and blood pressure was last saved
         long waterDate = prefGet.getLong("waterTime", myDate);
-        long calorieDate = prefGet.getLong("waterTime", myDate);
-        long bloodpressureDate = prefGet.getLong("waterTime", myDate);
-        currentDate = System.currentTimeMillis();
+        long calorieDate = prefGet.getLong("calorieTime", myDate);
+        long bloodpressureDate = prefGet.getLong("bloodpressureTime", myDate);
+
+        currentDate = Calendar.getInstance().get(Calendar.DAY_OF_YEAR);
 
 //         now we reset function  the value if the new day //
 
-        if (currentDate == waterDate) {
+        if (currentDate != waterDate) {
             waterValue = reset.resetValue();
             waterPresent = reset.resetValuePresent();
-
+        }
+        if (currentDate != calorieDate) {
             calorieValue = reset.resetValue();
             caloriePresent = reset.resetValuePresent();
-
+        }
+        if (currentDate != bloodpressureDate) {
             bloodpressureValue = reset.resetValue();
         }
 
-//       We set the value of numbers and progress bar  show in the UI //
+//       We set the value of numbers and progress bar show in the UI, show the right UI and values with a switch that checks which trackable value we clicked on the frontpage //
         switch (tracker.getValue()){
             case "Water":
                 tvpr.setBackground(ContextCompat.getDrawable(this, R.drawable.water));
                 result.setText(waterValue +" ml/ " + waterIntake + " ml");
+                waterPresent = waterValue * 100 / (int) waterIntake;
+                tvPresent.setText(waterPresent + "%");
+                bar.setProgress(waterPresent);
 
                 //in this section Add water Button and when press the add water button with the add water TextView //
                 //if is it empty the app going to error there for but if statement if the field empty //
@@ -131,11 +132,10 @@ public class TrackerPage extends AppCompatActivity {
                         //Store the amount of percentage, date and water used during the day keep it when  closed the app //
                         SharedPreferences prefPut = getSharedPreferences("DailyPref", Activity.MODE_PRIVATE);
                         SharedPreferences.Editor prefEditor = prefPut.edit();
-                        myDate = System.currentTimeMillis();
+                        myDate = Calendar.getInstance().get(Calendar.DAY_OF_YEAR);
                         prefEditor.putInt("WATER", waterValue);
-                        prefEditor.putInt("WATERPERCENTAGE", waterPresent);
 
-                        prefEditor.putLong("waterTime",myDate  );
+                        prefEditor.putLong("waterTime",myDate);
                         prefEditor.apply();
                     }
                 });
@@ -143,6 +143,10 @@ public class TrackerPage extends AppCompatActivity {
             case "Calories":
                 tvpr.setBackground(ContextCompat.getDrawable(this, R.drawable.background));
                 result.setText(calorieValue +" kcal/ " + calorieIntake + " kcal");
+                caloriePresent = calorieValue * 100 / (int) calorieIntake;
+                tvPresent.setText(caloriePresent + "%");
+                bar.setProgress(caloriePresent);
+
                 //in this section Add calorie Button and when press the add calorie button with the add calorie TextView //
                 //if is it empty the app going to error there for but if statement if the field empty //
                 WIP.setVisibility(View.GONE);
@@ -158,9 +162,8 @@ public class TrackerPage extends AppCompatActivity {
                         //Store the amount of percentage, date and water used during the day keep it when  closed the app //
                         SharedPreferences prefPut = getSharedPreferences("DailyPref", Activity.MODE_PRIVATE);
                         SharedPreferences.Editor prefEditor = prefPut.edit();
-                        myDate = System.currentTimeMillis();
+                        myDate = Calendar.getInstance().get(Calendar.DAY_OF_YEAR);
                         prefEditor.putInt("CALORIES", calorieValue);
-                        prefEditor.putInt("CALORIEPERCENTAGE", caloriePresent);
 
                         prefEditor.putLong("calorieTime",myDate  );
                         prefEditor.apply();
@@ -184,9 +187,9 @@ public class TrackerPage extends AppCompatActivity {
                         //Store the amount of percentage, date and water used during the day keep it when  closed the app //
                         SharedPreferences prefPut = getSharedPreferences("DailyPref", Activity.MODE_PRIVATE);
                         SharedPreferences.Editor prefEditor = prefPut.edit();
-                        myDate = System.currentTimeMillis();
+                        myDate = Calendar.getInstance().get(Calendar.DAY_OF_YEAR);
                         prefEditor.putInt("BLOODPRESSURE", bloodpressureValue);
-                        prefEditor.putLong("BloodpressureTime",myDate  );
+                        prefEditor.putLong("bloodpressureTime",myDate  );
                         prefEditor.apply();
                     }
                 });
@@ -208,18 +211,17 @@ public class TrackerPage extends AppCompatActivity {
         super.onPause();
         SharedPreferences prefPut = getSharedPreferences("DailyPref", Activity.MODE_PRIVATE);
         SharedPreferences.Editor prefEditor = prefPut.edit();
-        myDate = System.currentTimeMillis();
+        myDate = Calendar.getInstance().get(Calendar.DAY_OF_YEAR);
 
         prefEditor.putInt("WATER", waterValue);
-        prefEditor.putInt("WATERPERCENTAGE", waterPresent);
+        prefEditor.putLong("waterTime",myDate  );
 
         prefEditor.putInt("CALORIES", calorieValue);
-        prefEditor.putInt("CALORIEPERCENTAGE", caloriePresent);
+        prefEditor.putLong("calorieTime",myDate  );
 
         prefEditor.putInt("BLOODPRESSURE", bloodpressureValue);
-        prefEditor.putLong("BloodpressureTime",myDate  );
+        prefEditor.putLong("bloodpressureTime",myDate  );
 
-        prefEditor.putLong("time",myDate  );
         prefEditor.apply();
     }
 }

@@ -28,12 +28,12 @@ public class Profile extends AppCompatActivity {
     private EditText heightView;
     private EditText weightView;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
+        // Selects views //
         ageView = findViewById(R.id.age);
         heightView = findViewById(R.id.height);
         weightView = findViewById(R.id.weight);
@@ -42,9 +42,8 @@ public class Profile extends AppCompatActivity {
     }
 
 
-
+    // Saves changes //
     public void saveChanges(View view){
-
         age = Integer.parseInt(ageView.getText().toString());
         height = Float.parseFloat(heightView.getText().toString());
         weight = Float.parseFloat(weightView.getText().toString());
@@ -61,6 +60,7 @@ public class Profile extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), "Saved changes!", Toast.LENGTH_SHORT).show();
     }
 
+    // Loads information from shared prefs //
     public void load(){
         SharedPreferences sharedPreferences = getSharedPreferences(PROFILE, MODE_PRIVATE);
         age = sharedPreferences.getInt(AGE, 18);

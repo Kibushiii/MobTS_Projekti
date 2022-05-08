@@ -36,6 +36,7 @@ public class Settings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
+        // Selects views //
         water = findViewById(R.id.waterSwitch);
         calories = findViewById(R.id.calorieSwitch);
         bloodpressure = findViewById(R.id.bloodpressureSwitch);
@@ -45,8 +46,7 @@ public class Settings extends AppCompatActivity {
 
     }
 
-
-
+    // Saves changes //
     public void saveChanges(View view){
         SharedPreferences sharedPreferences = getSharedPreferences(SETTINGS, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -61,6 +61,7 @@ public class Settings extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), "Saved changes!", Toast.LENGTH_SHORT).show();
     }
 
+    // Loads information from shared prefs //
     public void load(){
         SharedPreferences sharedPreferences = getSharedPreferences(SETTINGS, MODE_PRIVATE);
         waterState = sharedPreferences.getBoolean(WATER, true);

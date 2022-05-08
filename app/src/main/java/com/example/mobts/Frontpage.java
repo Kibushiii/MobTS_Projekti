@@ -19,10 +19,6 @@ public class Frontpage extends AppCompatActivity {
 
     ListView listView;
 
-    private int age;
-    private float height;
-    private float weight;
-
     public static final String SETTINGS = "settings";
     public static final String PROFILE = "profile";
     public static final String WATER = "water";
@@ -57,7 +53,7 @@ public class Frontpage extends AppCompatActivity {
         createArray();
 
         welcome = (TextView) findViewById(R.id.welcomeMessage);
-        welcome.setText("Hello, " + username);
+        welcome.setText("Hello, " + username + "!");
 
         diaryBtn = (Button) findViewById(R.id.diaryBtn);
         diaryBtn.setOnClickListener(new View.OnClickListener() {
@@ -68,6 +64,7 @@ public class Frontpage extends AppCompatActivity {
             }
         });
 
+        // Listen for listview item clicks and then open the TrackerPage activity //
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l){
@@ -79,6 +76,7 @@ public class Frontpage extends AppCompatActivity {
         });
     }
 
+    // Loads information from shared prefs //
     public void load(){
         SharedPreferences sharedPreferences = getSharedPreferences(SETTINGS, MODE_PRIVATE);
         waterState = sharedPreferences.getBoolean(WATER, true);
@@ -111,11 +109,13 @@ public class Frontpage extends AppCompatActivity {
         listView.setAdapter(arrayAdapter);
     }
 
+    // Opens the profile on click //
     public void openProfile(View view){
         Intent intent = new Intent(this, Profile.class);
         startActivity(intent);
     }
 
+    // Opens the settings on click //
     public void openSettings(View view){
         Intent intent = new Intent(this, Settings.class);
         startActivity(intent);
