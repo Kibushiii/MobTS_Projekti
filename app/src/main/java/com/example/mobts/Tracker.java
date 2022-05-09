@@ -2,6 +2,10 @@ package com.example.mobts;
 
 import java.io.Serializable;
 
+/**
+ * Get values for using the tracker here
+ */
+
 public class Tracker implements Serializable {
 
     private String tracker;

@@ -9,7 +9,9 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
+/**
+ * Setting editing page
+ */
 
 public class Settings extends AppCompatActivity {
 

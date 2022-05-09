@@ -6,13 +6,21 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
-
+/**
+ * DBHelper class for all the SQLite things
+ */
 public class DBHelper extends SQLiteOpenHelper {
+    /**
+     * Create DB named Login.db
+     */
     public static final String DBNAME = "Login.db";
     public DBHelper(Context context) {
         super(context, "Login.db", null, 1);
     }
 
+    /**
+     * on creation create table named users
+     */
     @Override
     public void onCreate(SQLiteDatabase MyDB) {
         MyDB.execSQL("create Table users(username TEXT primary key, password TEXT)");
@@ -23,6 +31,9 @@ public class DBHelper extends SQLiteOpenHelper {
         MyDB.execSQL("drop Table if exists users");
     }
 
+    /**
+     * inserts the username and password to the database
+     */
     public Boolean insertData(String username, String password){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         ContentValues contentValues= new ContentValues();
@@ -34,6 +45,9 @@ public class DBHelper extends SQLiteOpenHelper {
             return true;
     }
 
+    /**
+     * check if username already exists
+     */
     public Boolean checkUsername(String username) {
         SQLiteDatabase MyDB = this.getWritableDatabase();
         Cursor cursor = MyDB.rawQuery("Select * from users where username = ?", new String[]{username});
@@ -43,6 +57,9 @@ public class DBHelper extends SQLiteOpenHelper {
             return false;
     }
 
+    /**
+     * check if username and password combination already exists
+     */
     public Boolean checkUsernamePassword(String username, String password){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         Cursor cursor = MyDB.rawQuery("Select * from users where username = ? and password = ?", new String[] {username,password});

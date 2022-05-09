@@ -1,5 +1,9 @@
 package com.example.mobts;
 
+/**
+ * Reset values for trackers with this
+ */
+
 // Create constructor with parameters //
 public class Reset {
     private int value;

@@ -7,6 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+/**
+ * Login and register redirect page, opens first when you open the app
+ */
+
 public class MainActivity extends AppCompatActivity {
 
     Button register,login;

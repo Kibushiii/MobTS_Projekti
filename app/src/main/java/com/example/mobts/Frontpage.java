@@ -15,6 +15,10 @@ import android.widget.TextView;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+/**
+ * Frontpage
+ */
+
 public class Frontpage extends AppCompatActivity {
 
     ListView listView;
@@ -38,7 +42,6 @@ public class Frontpage extends AppCompatActivity {
     private ArrayList arrayList;
 
     private TextView welcome;
-    Button diaryBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,15 +57,6 @@ public class Frontpage extends AppCompatActivity {
 
         welcome = (TextView) findViewById(R.id.welcomeMessage);
         welcome.setText("Hello, " + username + "!");
-
-        diaryBtn = (Button) findViewById(R.id.diaryBtn);
-        diaryBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), diary.class);
-                startActivity(intent);
-            }
-        });
 
         // Listens for listview item clicks and then open the TrackerPage activity //
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){

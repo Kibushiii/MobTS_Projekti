@@ -10,7 +10,9 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
+/**
+ * Profile editing page
+ */
 
 public class Profile extends AppCompatActivity {
 

@@ -10,10 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MobTS">
         <activity
-            android:name=".diary"
-            android:parentActivityName=".Frontpage"
-            android:exported="false" />
-        <activity
             android:name=".TrackerPage"
             android:exported="false"
             android:parentActivityName=".Frontpage" />
