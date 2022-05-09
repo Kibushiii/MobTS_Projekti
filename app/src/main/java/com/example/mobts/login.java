@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+/**
+ * Login page to sign in
+ */
 public class login extends AppCompatActivity {
 
     EditText userName1, passWord1;
@@ -26,6 +29,11 @@ public class login extends AppCompatActivity {
         btnSignin = (Button) findViewById(R.id.signin);
         DB = new DBHelper(this);
 
+        /**
+         * onClick check if all the fields are not empty
+         * check if username and password exists in database
+         * if user exists toast a message and send into new activity
+         */
         btnSignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

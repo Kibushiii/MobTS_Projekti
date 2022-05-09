@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+/**
+ * MainActivity that takes you to the login or register page
+ */
 public class MainActivity extends AppCompatActivity {
 
     Button register,login;
@@ -19,6 +22,9 @@ public class MainActivity extends AppCompatActivity {
         register = (Button) findViewById(R.id.register);
         login = (Button) findViewById(R.id.login);
 
+        /**
+         * button to send you to the register page
+         */
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -27,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * button to send you to the login page
+         */
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

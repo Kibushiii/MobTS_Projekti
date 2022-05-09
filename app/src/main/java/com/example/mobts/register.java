@@ -12,6 +12,9 @@ import android.widget.Toast;
 
 import java.nio.channels.InterruptedByTimeoutException;
 
+/**
+ * Register page to sign up
+ */
 public class register extends AppCompatActivity {
 
     EditText userName, passWord, rePassWord;
@@ -32,7 +35,12 @@ public class register extends AppCompatActivity {
         DB = new DBHelper(this);
 
 
-
+        /**
+         * onClick check if all the fields are not empty
+         * check if pass matches repass
+         * check if name exists in database
+         *
+         */
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
