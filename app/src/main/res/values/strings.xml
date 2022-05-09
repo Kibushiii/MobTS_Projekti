@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Project</string>
+    <string name="app_name">MobTS</string>
+    <string name="button_register">REGISTER</string>
+    <string name="button_login">LOGIN</string>
+    <string name="add_water">Add water</string>
+    <string name="_0ml_3000ml">0ml/3000ml</string>
 </resources>
