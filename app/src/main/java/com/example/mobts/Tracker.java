@@ -18,6 +18,7 @@ public class Tracker implements Serializable {
         this.weight = weight;
     }
 
+
     public String getValue(){
         return this.tracker;
     }

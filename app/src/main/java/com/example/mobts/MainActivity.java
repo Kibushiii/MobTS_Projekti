@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         login = (Button) findViewById(R.id.login);
 
         /**
-         * button to send you to the register page
+         * onClick button to send you to the register page
          */
         register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /**
-         * button to send you to the login page
+         * onClick button to send you to the login page
          */
         login.setOnClickListener(new View.OnClickListener() {
             @Override
